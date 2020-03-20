@@ -82,56 +82,55 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-//GET TASKS
+// //GET TASKS
 
-router.get('/tasks', (req, res) => {
-    Pros.getTasks()
-    .then(task => {
-        res.status(200).json(task)
-    })
-    .catch(() => {
-        res.status(500).json({ message: 'Error retrieving Tasks'})
-    })
-})
+// router.get('/tasks', (req, res) => {
+//     Pros.getTasks()
+//     .then(task => {
+//         res.status(200).json(task)
+//     })
+//     .catch(() => {
+//         res.status(500).json({ message: 'Error retrieving Tasks'})
+//     })
+// })
 
-//POST TASK
+// //POST TASK
 
-router.post('/tasks', (req, res) => {
-    const data = req.body
-    Pros.addTask(data)
-    .then(task => {
-        res.status(201).json(task)
-    })
-    .catch(() => {
-        res.status(500).json({ message: 'Error adding new Task' })
-    })
-})
+// router.post('/tasks', (req, res) => {
+//     const data = req.body
+//     Pros.addTask(data)
+//     .then(task => {
+//         res.status(201).json(task)
+//     })
+//     .catch(() => {
+//         res.status(500).json({ message: 'Error adding new Task' })
+//     })
+// })
 
-//GET RESOURCES
+// //GET RESOURCES
 
-router.get('/resources', (req, res) => {
+// router.get('/resources', (req, res) => {
 
-    Pros.getResources()
-    .then(resource => {
-        res.status(200).json(resources)
-    })
-    .catch(() => {
-        res.status(500).json({ message: 'Error retrieving Resources'})
-    })
-})
+//     Pros.getResources()
+//     .then(resource => {
+//         res.status(200).json(resource)
+//     })
+//     .catch(() => {
+//         res.status(500).json({ message: 'Error retrieving Resources'})
+//     })
+// })
 
-//POST RESOURCES
+// //POST RESOURCES
 
-router.post('/resources', (req, res) => {
-    const data = req.body
-
-    Project.addResource(data)
-    .then(resource => {
-        res.status(201).json(resource)
-    })
-    .catch(() => {
-        res.status(500).json({ message: 'Error creating Resource' })
-    })
-})
+// router.post('/resources', (req, res) => {
+//     const data = req.body
+//     Project.addResource(data)
+//     .then(resource => {
+//         res.status(201).json(resource)
+//     })
+//     .catch(() => {
+//         res.status(500).json({ message: 'Error creating Resource' })
+//     })
+// })
 
 module.exports = router 

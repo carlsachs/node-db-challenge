@@ -54,7 +54,12 @@ function addTask(data){
 }
 
 function getTasks(){
-    return db('tasks as t')
-    .select('t.*', 'p.project_name','p.project_description')
-    .join('projects as p', 't.project_id', '=', 'p.id')
+    return db('tasks')
+    .select('t.*', 'p.name','p.description')
+    .from("tasks as t")
+    .join('projects as p', 'p.id', '=', 't.id')
 } 
+
+// function getTasks(){
+//     return db('tasks')
+// } 
