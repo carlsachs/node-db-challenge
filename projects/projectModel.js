@@ -9,28 +9,28 @@ module.exports = {
 }
 
 function find (){
-    return db('characters');
+    return db('projects');
 }
 
 function findById (id){
-    return db('characters')
+    return db('projects')
     .where({ id })
     .first();
 }
 
 function add (data){
-    return db('characters')
+    return db('projects')
     .insert(data)
 }
 
 function update (id, changes){
-    return db('characters')
+    return db('projects')
     .where({ id })
     .update(changes)
 }
 
 function remove (id){
-    return db('characters')
+    return db('projects')
     .where({ id })
     .del()
 }
